@@ -1,0 +1,31 @@
+﻿@model IList<DevOpsDemo.Models.PostViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <h2>Post List</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Post Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.PostId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
